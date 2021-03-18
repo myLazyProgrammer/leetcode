@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+function sortArrayByParityII(A) {
+    let oddIdx = 1
+    let evenIdx = 0
+    for(let i=0; i < A.length; i++){
+        if(A[i] % 2 === 1){
+            if(oddIdx <= A.length-1){
+                swap(A, i, oddIdx)
+                oddIdx += 2
+            }
+        }else{
+            if(evenIdx <= A.length-1){
+                swap(A, i, evenIdx)
+                evenIdx += 2
+            }
+        }
+        console.log(A)
+    }
+    return A
+
+};
+
+function swap(nums, n1, n2){
+    let temp = nums[n1]
+    nums[n1] = nums[n2]
+    nums[n2] = temp
+}
+
+console.log(sortArrayByParityII(
+    [3,1,4,2],
+))
+
+</script>
+</html>
